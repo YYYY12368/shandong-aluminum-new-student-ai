@@ -48,15 +48,12 @@
     .desktop-nav { display: flex; align-items: center; gap: 32px; }
     .desktop-nav button { border: 0; border-radius: 999px; padding: 8px 13px; color: rgba(255,255,255,.75); background: transparent; font-size: 14px; transition: color .2s ease, background .2s ease; }
     .desktop-nav button:hover { color: white; background: rgba(255,255,255,.11); }
-    .official-link { display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; padding: 9px 13px; color: #f6d784; background: rgba(242,201,109,.08); font-size: 14px; font-weight: 700; transition: color .2s ease, background .2s ease; }
-    .official-link:hover { color: white; background: rgba(255,255,255,.13); }
     .menu-button { display: none; width: 40px; height: 40px; border: 1px solid rgba(255,255,255,.24); border-radius: 13px; color: white; background: rgba(255,255,255,.06); }
     .mobile-nav { display: none; border-top: 1px solid rgba(255,255,255,.11); background: var(--deep); }
     .mobile-nav.is-open { display: block; }
     .mobile-nav .container { padding: 8px 0 14px; }
-    .mobile-nav button, .mobile-nav a { display: block; width: 100%; margin: 4px 0; border: 0; border-radius: 12px; padding: 12px; color: rgba(255,255,255,.82); background: transparent; text-align: left; font-size: 14px; }
-    .mobile-nav button:hover, .mobile-nav a:hover { background: rgba(255,255,255,.1); }
-    .mobile-nav a { color: var(--yellow); }
+    .mobile-nav button { display: block; width: 100%; margin: 4px 0; border: 0; border-radius: 12px; padding: 12px; color: rgba(255,255,255,.82); background: transparent; text-align: left; font-size: 14px; }
+    .mobile-nav button:hover { background: rgba(255,255,255,.1); }
 
     .hero { position: relative; min-height: 100vh; overflow: hidden; color: white; background: var(--deep); }
     #campus-visual { position: absolute; inset: 0; z-index: 0; display: block; width: 100%; height: 100%; }
@@ -183,7 +180,10 @@
     .qr-zoom-modal .qr-image-wrap { max-width: 385px; margin: 0 auto; }
     footer { padding: 26px 0 30px; color: var(--ink); background: var(--yellow); }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; font-size: 13px; }
+    .footer-meta { min-width: 0; }
     .footer-title { display: flex; align-items: center; gap: 10px; font-weight: 800; }
+    .platform-disclaimer { max-width: 690px; margin: 8px 0 0; color: #42616a; font-size: 12px; line-height: 1.65; }
+    .platform-disclaimer b { margin-right: 5px; color: var(--deep); }
     .footer-links { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; color: #35545d; font-size: 12px; }
     .footer-links a { border-radius: 999px; padding: 7px 9px; background: rgba(255,255,255,.26); transition: background .2s, color .2s, transform .2s; }
     .footer-links a:hover { color: var(--deep); background: rgba(255,255,255,.58); transform: translateY(-1px); }
@@ -199,7 +199,7 @@
     button:focus-visible, a:focus-visible, textarea:focus-visible { outline: 3px solid rgba(242,201,109,.9); outline-offset: 3px; }
 
     @media (max-width: 840px) {
-      .desktop-nav, .official-link { display: none; }
+      .desktop-nav { display: none; }
       .menu-button { display: grid; place-items: center; }
       .hero-content { padding-bottom: 34px; }
       .hero-copy { padding-bottom: 46px; }
@@ -256,7 +256,6 @@
         <button onclick="scrollToSection('guide')">新生指南</button>
         <button onclick="scrollToSection('ask')">问题中心</button>
       </nav>
-      <a class="official-link" href="https://slxy.chinalco.com.cn/" target="_blank" rel="noreferrer">学校官网 ↗</a>
       <button class="menu-button" id="menuButton" aria-label="打开菜单" title="打开菜单">☰</button>
     </div>
     <nav class="mobile-nav" id="mobileNav" aria-label="手机导航">
@@ -264,7 +263,6 @@
         <button onclick="scrollToSection('home')">开始答疑</button>
         <button onclick="scrollToSection('guide')">新生指南</button>
         <button onclick="scrollToSection('ask')">问题中心</button>
-        <a href="https://slxy.chinalco.com.cn/" target="_blank" rel="noreferrer">访问学校官网 ↗</a>
       </div>
     </nav>
   </header>
@@ -353,8 +351,11 @@
 
   <footer>
     <div class="container footer-inner">
-      <div class="footer-title"><span>▣</span>山东铝业职业学院威海校区 · 新生 AI 答疑平台</div>
-      <div class="footer-links"><a href="https://slxy.chinalco.com.cn/" target="_blank" rel="noreferrer">⌖ 学校官网</a><a href="tel:06313793001">☎ 0631-3793001</a><span>⌁ 信息更新：2026.07</span></div>
+      <div class="footer-meta">
+        <div class="footer-title"><span>▣</span>山东铝业职业学院威海校区 · 新生 AI 答疑平台</div>
+        <p class="platform-disclaimer"><b>非官方说明</b>本答疑平台由在校生个人自制，所有答疑内容仅为学长经验与学校官网公开信息整理，并非校园官方答复；具体安排请以学校正式通知为准。</p>
+      </div>
+      <div class="footer-links"><span>学校官方网站：</span><a href="https://slxy.chinalco.com.cn/" rel="noreferrer">slxy.chinalco.com.cn</a><a href="tel:06313793001">☎ 0631-3793001</a><span>⌁ 信息更新：2026.07</span></div>
     </div>
     <div class="container footer-qr-row">
       <div class="footer-qr-copy"><b>扫码资源</b><span>点击二维码可放大，方便微信扫码</span></div>
